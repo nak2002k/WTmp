@@ -255,3 +255,19 @@ User.create(
   about: "Wait! I didn't steal anything! I was returning something I stole!",
   password: "123456",   
   password_confirmation: "123456")
+
+  User.create(
+  first_name: "Chinmay", 
+  dob_day: Faker::Number.within(range: 1..30), 
+  dob_month: Faker::Number.within(range: 1..12), 
+  dob_year: Faker::Number.within(range: 1980..2000), 
+  show_gender: Faker::Boolean.boolean, 
+  gender_identity: "man", 
+  show_sexual_orientation: Faker::Boolean.boolean,
+  sexual_orientation: "straight",
+  gender_interest: "woman", 
+  email: "kamble@lol.com", 
+  url1: "https://drive.google.com/file/d/1NCk8ZK7d84nMTmiyrQd1olRbPCEaa77A/view?usp=sharing", 
+  about: "Wait! I didn't steal anything! I was returning something I stole!",
+  password: "123456",   
+  password_confirmation: "123456")
