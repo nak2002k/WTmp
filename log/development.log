@@ -11763,3 +11763,249 @@ Processing by Api::SessionsController#destroy as */*
 Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 201)
 
 
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:29:46 +0530
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:29:46 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as */*
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 1208)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 1208)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2023-05-17 10:29:52 +0530
+Processing by Api::SessionsController#create as */*
+  Parameters: {"email"=>"atharva@lol.com", "password"=>"[FILTERED]", "session"=>{"email"=>"atharva@lol.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "atharva@lol.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.58ms)
+Completed 201 Created in 198ms (Views: 1.2ms | ActiveRecord: 3.5ms | Allocations: 17705)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2023-05-17 10:29:52 +0530
+Started POST "/api/users/2" for 127.0.0.1 at 2023-05-17 10:29:52 +0530
+Processing by Api::UsersController#match_users as */*
+  Parameters: {"id"=>"2"}
+Processing by Api::UsersController#index as */*
+  Parameters: {"gender_identity"=>"man", "gender_interest"=>"everyone", "id"=>"2", "user"=>{"gender_identity"=>"man", "gender_interest"=>"everyone"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5:in `index'
+  [1m[36mMatch Load (0.3ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:19:in `map'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 2]]
+  ↳ app/controllers/api/users_controller.rb:7:in `index'
+No serializer found for resource: #<User id: 3, first_name: "Nakul", dob_day: 12, dob_month: 1, dob_year: 1980, show_gender: false, gender_identity: "man", gender_interest: "woman", email: "nakul@lol.com", url1: "https://picsum.photos/200/300?grayscale", about: "ROR GUY", password_digest: [FILTERED], created_at: "2023-05-17 04:45:13.573972000 +0000", updated_at: "2023-05-17 04:45:13.573972000 +0000", password_reset_token: nil, password_reset_sent_at: nil, sexual_orientation: "straight", show_sexual_orientation: true>
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:28:in `match_users'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (1.62ms)
+Completed 200 OK in 20ms (Views: 4.8ms | ActiveRecord: 2.2ms | Allocations: 8125)
+
+
+  [1m[36mMatch Load (0.2ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."user_id" = $1 AND "matches"."liked" = $2[0m  [["user_id", 2], ["liked", true]]
+  ↳ app/models/user.rb:33:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 39ms (Views: 1.7ms | ActiveRecord: 4.7ms | Allocations: 22028)
+
+
+Started POST "/api/users/2" for 127.0.0.1 at 2023-05-17 10:29:52 +0530
+Started GET "/api/users/2" for 127.0.0.1 at 2023-05-17 10:29:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#match_users as */*
+  Parameters: {"id"=>"2"}
+Processing by Api::UsersController#index as */*
+  Parameters: {"gender_identity"=>"man", "gender_interest"=>"everyone", "id"=>"2", "user"=>{"gender_identity"=>"man", "gender_interest"=>"everyone"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5:in `index'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:28:in `match_users'
+  [1m[36mMatch Load (0.6ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:19:in `map'
+  [1m[36mMatch Load (1.7ms)[0m  [1m[34mSELECT "matches".* FROM "matches" WHERE "matches"."user_id" = $1 AND "matches"."liked" = $2[0m  [["user_id", 2], ["liked", true]]
+  ↳ app/models/user.rb:33:in `map'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 2]]
+  ↳ app/controllers/api/users_controller.rb:7:in `index'
+No serializer found for resource: #<User id: 3, first_name: "Nakul", dob_day: 12, dob_month: 1, dob_year: 1980, show_gender: false, gender_identity: "man", gender_interest: "woman", email: "nakul@lol.com", url1: "https://picsum.photos/200/300?grayscale", about: "ROR GUY", password_digest: [FILTERED], created_at: "2023-05-17 04:45:13.573972000 +0000", updated_at: "2023-05-17 04:45:13.573972000 +0000", password_reset_token: nil, password_reset_sent_at: nil, sexual_orientation: "straight", show_sexual_orientation: true>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (1.27ms)
+Completed 200 OK in 39ms (Views: 6.4ms | ActiveRecord: 8.6ms | Allocations: 23926)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 61ms (Views: 6.7ms | ActiveRecord: 16.9ms | Allocations: 31399)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:35:56 +0530
+Processing by Api::UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 15ms (Views: 3.9ms | ActiveRecord: 4.7ms | Allocations: 5143)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:35:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.72ms)
+Completed 200 OK in 26ms (Views: 1.9ms | ActiveRecord: 3.9ms | Allocations: 18614)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:36:00 +0530
+Processing by Api::UsersController#show as */*
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:36:00 +0530
+Processing by Api::UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:17:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.4ms)
+Completed 200 OK in 11ms (Views: 1.0ms | ActiveRecord: 4.0ms | Allocations: 4371)
+
+
+  ↳ app/controllers/api/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.59ms)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1037)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:36:01 +0530
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:36:01 +0530
+Processing by Api::UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by Api::UsersController#show as */*
+  ↳ app/controllers/api/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.57ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1042)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.39ms)
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 4.7ms | Allocations: 3991)
+
+
+Started DELETE "/api/logout" for 127.0.0.1 at 2023-05-17 10:36:05 +0530
+Processing by Api::SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 265)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:05 +0530
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:05 +0530
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:06 +0530
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:06 +0530
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 337)
+
+
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 337)
+
+
+Started GET "/main.893e8d5fe6134ff07e7c.hot-update.json" for 127.0.0.1 at 2023-05-17 10:37:16 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/main.893e8d5fe6134ff07e7c.hot-update.json"):
+  
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:16 +0530
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:16 +0530
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 400)
+
+
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:16 +0530
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:16 +0530
+Processing by Api::UsersController#show as */*
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:47 +0530
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:47 +0530
+Processing by Api::UsersController#show as */*
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 335)
+
+
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 335)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:49 +0530
+Processing by Api::UsersController#show as */*
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:49 +0530
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:50 +0530
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:37:50 +0530
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 335)
+
+
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 335)
+
+
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:38:14 +0530
+Started GET "/api/me" for 127.0.0.1 at 2023-05-17 10:38:14 +0530
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Processing by Api::UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 341)
+
+

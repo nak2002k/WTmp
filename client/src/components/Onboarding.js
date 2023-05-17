@@ -165,7 +165,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
             </div>  
             {formik.touched.show_gender && formik.errors.show_gender && <div className="errors">{formik.errors.show_gender}</div>} 
 
-            <label>Sexual Orientation</label>
+            <label>Skills</label>
             <div className="multiple-input-container sexual-orientation">
               <input 
                 id="straight-sexual-orientation" 
@@ -176,7 +176,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.sexual_orientation === 'straight'}
               />
-              <label htmlFor="straight-sexual-orientation">Straight</label>
+              <label htmlFor="straight-sexual-orientation">DSA</label>
               <input 
                 id="gay-sexual-orientation" 
                 name="sexual_orientation" 
@@ -186,7 +186,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.sexual_orientation === 'gay'}
               />
-              <label htmlFor="gay-sexual-orientation">Gay</label>
+              <label htmlFor="gay-sexual-orientation">Ruby on rails</label>
               <input 
                 id="lesbian-sexual-orientation" 
                 name="sexual_orientation" 
@@ -196,7 +196,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.sexual_orientation === 'lesbian'}
               />
-              <label htmlFor="lesbian-sexual-orientation">Lesbian</label>    
+              <label htmlFor="lesbian-sexual-orientation">React js</label>    
               <input 
                 id="bisexual-sexual-orientation" 
                 name="sexual_orientation" 
@@ -206,7 +206,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.sexual_orientation === 'bisexual'}
               />
-              <label htmlFor="bisexual-sexual-orientation">Bisexual</label>
+              <label htmlFor="bisexual-sexual-orientation">Friends</label>
               <input 
                 id="asexual-sexual-orientation" 
                 name="sexual_orientation" 
@@ -216,7 +216,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.sexual_orientation === 'asexual'}
               />
-              <label htmlFor="asexual-sexual-orientation">Asexual</label>
+              <label htmlFor="asexual-sexual-orientation">Anime fan</label>
               <input 
                 id="demisexual-sexual-orientation" 
                 name="sexual_orientation" 
@@ -226,7 +226,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.sexual_orientation === 'demisexual'}
               />
-              <label htmlFor="demisexual-sexual-orientation">Demisexual</label> 
+              <label htmlFor="demisexual-sexual-orientation">extrovert</label> 
               <input 
                 id="pansexual-sexual-orientation" 
                 name="sexual_orientation" 
@@ -236,7 +236,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.sexual_orientation === 'pansexual'}
               />
-              <label htmlFor="pansexual-sexual-orientation">Pansexual</label>
+              <label htmlFor="pansexual-sexual-orientation">WEb 3.0</label>
               <input 
                 id="queer-sexual-orientation" 
                 name="sexual_orientation" 
@@ -246,7 +246,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.sexual_orientation === 'queer'}
               />
-              <label htmlFor="queer-sexual-orientation">Queer</label>
+              <label htmlFor="queer-sexual-orientation">Html</label>
               <input 
                 id="questioning-sexual-orientation" 
                 name="sexual_orientation" 
@@ -256,7 +256,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.sexual_orientation === 'questioning'}
               />
-              <label htmlFor="questioning-sexual-orientation">Questioning</label>           
+              <label htmlFor="questioning-sexual-orientation">Android developer</label>           
             </div>
             {formik.touched.sexual_orientation && formik.errors.sexual_orientation && <div className="errors">{formik.errors.sexual_orientation}</div>}
 
@@ -269,7 +269,7 @@ function Onboarding({ user, showAuth, isEditingProfile, setUser }) {
                 onChange={formik.handleChange}
                 checked={formik.values.show_sexual_orientation}
               />
-            <label htmlFor="show-sexual-orientation">Show sexual orientation on my profile</label>              
+            <label htmlFor="show-sexual-orientation">Show Skills on my profile</label>              
             </div> 
             {formik.touched.show_sexual_orientation && formik.errors.show_sexual_orientation && <div className="errors">{formik.errors.show_sexual_orientation}</div>}  
 
